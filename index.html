@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <script src="calculadora.js"></script>
+    <title>Calculadora científica</title>
+</head>
+
+<body>
+        <header>
+            <h2>Calculadora Científica</h2>
+        </header>
+    <main>
+        <table>
+            <tr>
+                <th colspan="5">
+                    <input id="displayTela" type="text" readonly>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="displaytable-cell">
+                        <button class="button cinza" type="button" onclick="calculadora.clearMemory()">MC</button>
+                    </div>
+                    <div class="displaytable-cell">
+                        <button class="button cinza" type="button" onclick="calculadora.readMemory()">MR</button>
+                    </div>
+                    <div class="displaytable-cell">
+                        <button class="button cinza" type="button" onclick="calculadora.addToMemory()">M+</button>
+                    </div>
+                    <div class="displaytable-cell">
+                        <button class="button cinza" type="button" onclick="calculadora.subtractFromMemory()">M-</button>
+                    </div>
+                    <div class="displaytable-cell">
+                        <button class="button cinza" type="button" onclick="calculadora.saveToMemory()">MS</button>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="displaytable-cell">
+                        <button class="button preto" type="button" onclick="calculadora.writeMathFunction('sin(')">sin</button>
+                    </div>
+                    <div class="displaytable-cell">
+                        <button class="button preto" type="button" onclick="calculadora.writeMathFunction('cos(')">cos</button>
+                    </div>
+                    <div class="displaytable-cell">
+                        <button class="button preto" type="button" onclick="calculadora.writeMathFunction('tan(')">tan</button>
+                    </div>
+                    <div class="displaytable-cell">
+                        <button class="button preto" type="button" onclick="calculadora.writeMathFunction('log(')">log</button>
+                    </div>
+                    <div class="displaytable-cell">
+                        <button class="button preto" type="button" onclick="calculadora.writeMathFunction('ln(')">ln</button>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="displaytable-cell">
+                        <button class="button" type="button" onclick="calculadora.writeMathFunction('e')">e</button>
+                    </div>
+                    <div class="displaytable-cell">
+                        <button class="button vermelho" type="button" onclick="calculadora.clearDisplay()">CE</button>
+                    </div>
+                    <div class="displaytable-cell">
+                        <button class="button vermelho" type="button" onclick="calculadora.clearDisplay()">C</button>
+                    </div>
+                    <div class="displaytable-cell">
+                        <button class="button vermelho" type="button" onclick="calculadora.eraseLastInput()">Del</button>
+                    </div>
+                    <div class="displaytable-cell">
+                        <button class="button verde" type="button" onclick="calculadora.writeOperatorToDisplay('/')">/</button>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="displaytable-cell">
+                        <button class="button" type="button" onclick="calculadora.writeMathFunction('PI')">π</button>
+                    </div>
+                    <div class="displaytable-cell">
+                        <button class="button azul" type="button" onclick="insert('7')">7</button>
+                    </div>
+                    <div class="displaytable-cell">
+                        <button class="button azul" type="button" onclick="insert('8')">8</button>
+                    </div>
+                    <div class="displaytable-cell">
+                        <button class="button azul" type="button" onclick="calculadora.writeToDisplay('9')">9</button>
+                    </div>
+                    <div class="displaytable-cell">
+                        <button class="button verde" type="button" onclick="calculadora.writeOperatorToDisplay('*')">x</button>
+                    </div>
+            </tr>
+            <tr>
+                <td>
+                    <div class="displaytable-cell">
+                        <button class="button" type="button" onclick="calculadora.calculateFactorial()">n!</button>
+                    </div>
+                    <div class="displaytable-cell">
+                        <button class="button azul" type="button" onclick="calculadora.writeToDisplay('4')">4</button>
+                    </div>
+                    <div class="displaytable-cell">
+                        <button class="button azul" type="button" onclick="calculadora.writeToDisplay('5')">5</button>
+                    </div>
+                    <div class="displaytable-cell">
+                        <button class="button azul" type="button" onclick="calculadora.writeToDisplay('6')">6</button>
+                    </div>
+                    <div class="displaytable-cell">
+                        <button class="button verde" type="button" onclick="calculadora.writeOperatorToDisplay('-')">-</button>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="displaytable-cell">
+                        <button class="button verde" type="button" onclick="calculadora.toggleSign()">(-)</button>
+                    </div>
+                    <div class="displaytable-cell">
+                        <button class="button azul" type="button" onclick="calculadora.writeToDisplay('1')">1</button>
+                    </div>
+                    <div class="displaytable-cell">
+                        <button class="button azul" type="button" onclick="calculadora.writeToDisplay('2')">2</button>
+                    </div>
+                    <div class="displaytable-cell">
+                        <button class="button azul" type="button" onclick="calculadora.writeToDisplay('3')">3</button>
+                    </div>
+                    <div class="displaytable-cell">
+                        <button class="button verde" type="button" onclick="calculadora.writeOperatorToDisplay('+')">+</button>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="displaytable-cell">
+                        <button class="button verde" type="button" onclick="calculadora.writeOperatorToDisplay('(')">(</button>
+                    </div>
+                    <div class="displaytable-cell">
+                        <button class="button verde" type="button" onclick="calculadora.writeOperatorToDisplay(')')">)</button>
+                    </div>
+                    <div class="displaytable-cell">
+                        <button class="button azul" type="button" onclick="calculadora.writeToDisplay('0')">0</button>
+                    </div>
+                    <div class="displaytable-cell">
+                        <button class="button verde" type="button" onclick="calculadora.writeToDisplay('.')">.</button>
+                    </div>
+                    <div class="displaytable-cell">
+                        <button class="button verde" type="button" onclick="calculadora.solveOperation()">=</button>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </main>
+</body>
+</html>

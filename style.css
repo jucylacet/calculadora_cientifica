@@ -1,0 +1,52 @@
+body{
+    text-align: center;
+}
+
+input {
+    background-color: white;
+    width: 300px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    font-size: 30px;
+}
+
+table {
+    display: inline-block;
+    padding: 15px;
+    background-color: grey;
+    border-radius: 10px;
+}
+
+.displaytable-cell {
+    display: table-cell;
+}
+  
+.button {
+    width: 60px;
+    height: 35px;
+    font-size: 20px;
+    border-radius: 5px;
+}
+.botao:hover{
+    background-color: rgba(220, 220, 220, 0.05);
+}
+.preto { 
+    background-color: black; 
+    color: white;
+}
+
+.verde {
+    background-color: #94fc81;
+}
+
+.cinza {
+    background-color: #c7c3c3;
+}
+
+.azul {
+    background-color: #8daafa;
+}
+
+.vermelho {
+    background-color: #ffa1a1;
+}
